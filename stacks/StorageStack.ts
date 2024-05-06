@@ -15,5 +15,6 @@ export function StorageStack({ stack }: StackContext) {
 
   return {
     table,
+    bucket,
   };
 }
