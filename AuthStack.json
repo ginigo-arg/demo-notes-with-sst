@@ -1,0 +1,25 @@
+{
+   "StorageStack":"ApiStack",
+   "ApiEndpoint": "https://bw9r0ozjeh.execute-api.us-east-1.amazonaws.com",
+  "AuthStack": {
+    "IdentityPoolId": "us-east-1:ed71397d-5e3b-4cad-a96e-247c6b45ef96",
+    "Message": "Custom message by Ginigo",
+    "Region": "us-east-1",
+    "UserPoolClientId": "3889l9l20v82g1sccm0tvr8h3c",
+    "UserPoolId": "us-east-1_lgEYoDDXI"
+  }
+}
+
+
+pnpm dlx aws-api-gateway-cli-test \
+--user-pool-id='us-east-1_lgEYoDDXI' \
+--app-client-id='3889l9l20v82g1sccm0tvr8h3c' \
+--cognito-region='us-east-1' \
+--identity-pool-id='us-east-1:ed71397d-5e3b-4cad-a96e-247c6b45ef96' \
+--invoke-url='https://bw9r0ozjeh.execute-api.us-east-1.amazonaws.com' \
+--api-gateway-region='<API_REGION>' \
+--username='admin@example.com' \
+--password='Passw0rd!' \
+--path-template='/notes' \
+--method='POST' \
+--body='{"content":"hello world","attachment":"hello.jpg"}'
