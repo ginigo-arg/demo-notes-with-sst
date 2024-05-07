@@ -13,6 +13,11 @@ export function ApiStack({ stack }: StackContext) {
         bind: [table, STRIPE_SECRET_KEY],
       },
     },
+    cors: {
+      allowMethods: ["GET"],
+      //   allowMethods: ["POST", "GET", "PUT", "DELETE"],
+      //   allowHeaders: ["Content-Type", "Authorization"],
+    },
     routes: {
       "POST /notes": "packages/functions/src/create.main",
       "GET /notes/{id}": "packages/functions/src/get.main",
