@@ -10,7 +10,7 @@ export function FrontendStack({ stack, app }: StackContext) {
 
   // Define our React app
   const site = new StaticSite(stack, "ReactSiteVite", {
-    path: "packages/frontend",
+    path: "packages/frontend-vite",
     buildCommand: "pnpm run build",
     buildOutput: "dist",
     // Pass in our environment variables
@@ -26,7 +26,7 @@ export function FrontendStack({ stack, app }: StackContext) {
 
   // Show the url in the output
   stack.addOutputs({
-    CustomMsg: "Ready frontend NextJs",
+    CustomMsg: "Ready frontend vite",
     SiteUrl: site.url,
   });
 }
