@@ -1,8 +1,7 @@
-import { RemovalPolicy } from "aws-cdk-lib/core";
 import { StackContext, StaticSite } from "sst/constructs";
 
-export function Web({ stack }: StackContext) {
-  const web = new StaticSite(stack, "web", {
+export function FrontendStack({ stack }: StackContext) {
+  const web = new StaticSite(stack, "Vite-site", {
     path: "packages/frontend",
     buildOutput: "dist",
     buildCommand: "npm run build",
